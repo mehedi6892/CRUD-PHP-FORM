@@ -42,7 +42,7 @@
                                         <td>
                                             <div class="btn btn-group">
                                                 <a href="update-users.php?update=<?php echo $user_id; ?>" class="btn btn-primary">Update</a>
-                                                <a href="all-users.php?Delete=<?php echo $user_id; ?>" class="btn btn-danger">Delete</a>
+                                                <a href="all-users.php?delete=<?php echo $user_id; ?>" class="btn btn-danger">Delete</a>
                                                 
                                             </div>
                                         </td>
@@ -69,13 +69,13 @@
             //Delete User Info from the All Users Table
 
             if(isset($_GET['delete'])){
-                $user_id = $_GET['delete'];
+                $the_user_id = $_GET['delete'];
 
                 $query = "DELETE FROM users WHERE user_id = $the_user_id";
 
                 $delete_user = mysqli_query($conn, $query);
 
-                header ("Location: all_users.php");
+                header ("Location: all-users.php");
             }
         
         ?>
